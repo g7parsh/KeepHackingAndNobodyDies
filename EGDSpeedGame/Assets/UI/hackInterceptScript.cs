@@ -10,7 +10,6 @@ public class hackInterceptScript : MonoBehaviour {
 	public float anomalychance = 0.1f;
 
 	private string textstring = "";
-	private int skip = 0;
 
 	private Text txt;
 
