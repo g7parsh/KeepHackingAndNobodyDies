@@ -70,4 +70,8 @@ public class terminalScript : MonoBehaviour {
 		if (line.Equals("ayy")) return "lmao";
 		else return "";
 	}
+
+	public void exitWindow() {
+		Destroy(gameObject);
+	}
 }
