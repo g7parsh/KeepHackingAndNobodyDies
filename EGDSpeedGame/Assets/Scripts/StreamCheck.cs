@@ -14,6 +14,11 @@ public class StreamCheck : MonoBehaviour {
     
 	
 	}
+    public void changeColor() {
+    
+        
+
+    }
     public void CheckString(string input) {
         string finalString = "";
         if (!(stream.checkQueue.Count == 0))
