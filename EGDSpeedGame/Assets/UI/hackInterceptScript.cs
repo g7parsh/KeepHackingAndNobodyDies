@@ -32,7 +32,6 @@ public class hackInterceptScript : MonoBehaviour {
 		//cut off first char and tags
 		if(textstring.Length > textwidth * 24) {//24 is size with tag
 			textstring = textstring.Substring(24);
-
 		}
 
 		//add new data
@@ -41,7 +40,6 @@ public class hackInterceptScript : MonoBehaviour {
 		if (Random.value <= anomalychance) {
 			anomaly = true;
 		}
-		
 
 		if(textstring.Length < textwidth * 48) {
             string checkString = "";
