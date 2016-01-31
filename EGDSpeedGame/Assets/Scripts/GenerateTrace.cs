@@ -27,6 +27,15 @@ public class GenerateTrace : MonoBehaviour
             //b.transform.position = new Vector3(width, posy ,-1);
             //temp.transform.position = ;
             height += 30;
+
+			Text[] tex = temp.GetComponentsInChildren<Text>();
+			foreach(Text t in tex)
+			{
+				if(t.name == "IPAddr")
+				{
+					t.GetComponent<RectTransform>().localPosition = new Vector3(width - 70 , posy , -1);
+				}
+			}
             tracingnumbers.Add(temp);
 
         }
