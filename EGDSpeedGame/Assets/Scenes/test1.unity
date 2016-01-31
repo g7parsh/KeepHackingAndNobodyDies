@@ -176,6 +176,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.5434457
       objectReference: {fileID: 0}
+    - target: {fileID: 11468550, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
   m_IsPrefabParent: 0
@@ -257,18 +261,6 @@ Prefab:
     - target: {fileID: 22426276, guid: 7f5a473451f706745919cabd26f81150, type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 22426276, guid: 7f5a473451f706745919cabd26f81150, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.89799726
-      objectReference: {fileID: 0}
-    - target: {fileID: 22426276, guid: 7f5a473451f706745919cabd26f81150, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.89799726
-      objectReference: {fileID: 0}
-    - target: {fileID: 22426276, guid: 7f5a473451f706745919cabd26f81150, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.89799726
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f5a473451f706745919cabd26f81150, type: 2}
