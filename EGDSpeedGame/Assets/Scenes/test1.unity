@@ -180,6 +180,18 @@ Prefab:
       propertyPath: m_FontData.m_VerticalOverflow
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11468550, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 22436968, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 77.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22436968, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
   m_IsPrefabParent: 0
@@ -262,7 +274,8 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11423260, guid: 7f5a473451f706745919cabd26f81150, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7f5a473451f706745919cabd26f81150, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &121038155 stripped

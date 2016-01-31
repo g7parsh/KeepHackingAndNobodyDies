@@ -40,10 +40,17 @@ public class terminalScript : MonoBehaviour {
 			}
 		}
 
-		if (count >= lineheight) {//shift everything then add to bottom
+		if (count > lineheight) {//shift everything then add to bottom
 			while(lines.Count > lineheight) {
 				lines.RemoveFirst();
 			}
+		}
+		else {
+			RectTransform rt = inputfield.GetComponent<RectTransform>();
+			Vector3 tmppos = rt.localPosition;
+			tmppos.y = -txt.preferredHeight + 77.5f;
+			print(txt.preferredHeight);
+			rt.localPosition = tmppos;
 		}
 
 		foreach (string s in lines) {
