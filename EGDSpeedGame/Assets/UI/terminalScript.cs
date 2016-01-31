@@ -45,29 +45,32 @@ public class terminalScript : MonoBehaviour {
 				lines.RemoveFirst();
 			}
 		}
-		else {
-			RectTransform rt = inputfield.GetComponent<RectTransform>();
-			Vector3 tmppos = rt.localPosition;
-			tmppos.y = -txt.preferredHeight + 77.5f;
-			print(txt.preferredHeight);
-			rt.localPosition = tmppos;
-		}
-
+		
 		foreach (string s in lines) {
 			tmp += s + "\n";
 		}
-		
-
 
 		txt.text = tmp;
 
+		//set new input field position
+		RectTransform rt = inputfield.GetComponent<RectTransform>();
+		Vector3 tmppos = rt.localPosition;
+		tmppos.y = -txt.preferredHeight + 92.5f;
+		print(txt.preferredHeight);
+		rt.localPosition = tmppos;
+		
+		//clear input
 		inputfield.text = "";
 		//reactivate input to type again
 		inputfield.ActivateInputField();
 	}
 
 	private string get_response(string line) {
-		if (line.Equals("ayy")) return "lmao";
+		if (line.Equals("ayy")) {
+			return "lmao";
+		}else if (line.Equals("b")) {
+			return "dasdsad\nr3rwerwer";
+		}
 		else return "";
 	}
 
