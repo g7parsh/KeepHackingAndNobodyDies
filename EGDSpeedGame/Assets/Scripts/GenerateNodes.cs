@@ -5,6 +5,7 @@ public class GenerateNodes : MonoBehaviour {
 
 	private int totalnodes;
 	private int rednodes;
+	public int changenodes;
 	private List<GameObject> nodes = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
@@ -12,6 +13,7 @@ public class GenerateNodes : MonoBehaviour {
 		totalnodes = Random.Range(5, 7);
 		//randomly choose how many are green and red
 		rednodes = Random.Range(1, 4);
+		changenodes = 0;
 		//randomly place them within the set area
 
 		float maxwidth = gameObject.GetComponent<RectTransform>().rect.width;
@@ -27,7 +29,7 @@ public class GenerateNodes : MonoBehaviour {
 				tempos = new Vector3(Random.Range(0f, maxwidth), Random.Range(0f, maxheight), 10f);
 			}
 			temp.transform.localPosition = tempos;
-			temp.transform.parent = gameObject.transform.parent;
+			temp.transform.parent = gameObject.transform;
 
 			nodes.Add(temp);
 		}
@@ -41,7 +43,7 @@ public class GenerateNodes : MonoBehaviour {
 				tempos = new Vector3(Random.Range(0f, maxwidth), Random.Range(0f, maxheight), 10f);
 			}
 			temp.transform.localPosition = tempos;
-			temp.transform.parent = gameObject.transform.parent;
+			temp.transform.parent = gameObject.transform;
 
 			nodes.Add(temp);
 		}
@@ -58,12 +60,12 @@ public class GenerateNodes : MonoBehaviour {
 		for (int i = 0 ; i < nodes.Count -1 ; i++)
 		{
 			LineRenderer line = nodes[i].GetComponent<LineRenderer>();
-			Vector3 oripos = new Vector3(((nodes[i].transform.position.x *-1)), nodes[i].transform.position.y,10f);
+			Vector3 oripos = new Vector3(((nodes[i].transform.position.x -305 )), (nodes[i].transform.position.y - 140),10f);
 			line.SetPosition(0, oripos);
 
-			Vector3 neworipos = new Vector3(((nodes[i +1].transform.position.x *-1)), nodes[i +1].transform.position.y,10f);
+			Vector3 neworipos = new Vector3(((nodes[i +1].transform.position.x -305 )), (nodes[i +1].transform.position.y - 140),10f);
 			line.SetPosition(1, neworipos);
-			line.SetWidth(3f,3f);
+			line.SetWidth(4f,4f);
 		}
 	}
 	bool Spacing(Vector3 pos)
@@ -72,7 +74,7 @@ public class GenerateNodes : MonoBehaviour {
 		foreach(GameObject g in nodes)
 		{
 			float dist = Vector3.Distance(g.transform.position, pos);
-			if(dist < 15)
+			if(dist < 20)
 			{
 				return false;
 			}
@@ -83,5 +85,9 @@ public class GenerateNodes : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log(gameObject.GetComponent<RectTransform>().rect.width);
+		if(changenodes >= rednodes)
+		{
+			Destroy(transform.parent.gameObject);
+		}
 	}
 }
