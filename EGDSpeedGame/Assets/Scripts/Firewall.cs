@@ -4,9 +4,11 @@ using System.Collections;
 public class Firewall : MonoBehaviour {
 	public bool dragging = false;
 	private Vector3 startingpos;
+	private RectTransform rt;
 	// Use this for initialization
 	void Start () {
-		startingpos = transform.position;
+		rt = GetComponent<RectTransform>();
+		startingpos = rt.localPosition;
 	}
 	
 	// Update is called once per frame
@@ -14,7 +16,7 @@ public class Firewall : MonoBehaviour {
 		//wobble while its not beeing dragged upwards
 		if(dragging == false)
 		{
-			gameObject.transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time *60, 20), transform.position.z);
+			rt.localPosition = new Vector3(rt.localPosition.x, startingpos.y + Mathf.PingPong(Time.time *60, 20), rt.localPosition.z);
 		}
 		else
 		{
@@ -24,20 +26,25 @@ public class Firewall : MonoBehaviour {
 	public void OnDrag()
 	{
 		dragging = true;
-		transform.position = Input.mousePosition;
+		if (rt.localPosition.y < 140) {
+			Vector3 tmp = rt.position;
+			tmp.y = Input.mousePosition.y;
+			rt.position = tmp;
+		}
+		
 	}
 	public void OnDrop()
 	{
 		//brought it high enough you win destroy gameobject
-		if(transform.position.y > startingpos.y + 230)
+		if(rt.localPosition.y > 140)
 		{
 			Debug.Log("hit top limit");
 			//destroy the game object the minigame has been won
-			Destroy(transform.parent.gameObject);
+			Destroy(transform.parent.parent.gameObject);
 		}
 
 
-		transform.position = startingpos;
+		rt.localPosition = startingpos;
 		dragging = false;
 	}
 }
