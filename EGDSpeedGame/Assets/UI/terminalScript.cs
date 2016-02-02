@@ -21,9 +21,11 @@ public class terminalScript : MonoBehaviour {
 
 	public void addLine(string input) {
 		//add a line of command and get the response
-		string tmp = "";
-		
 
+		//prevent it from submitting line when clicked off
+		if (!(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))) return;
+
+		string tmp = "";
 
 		string fulltext = prefix + " " + input + "\n" + get_response(input);
 		string[] textlines = fulltext.Split(new string[] { "\r\n", "\n" }, System.StringSplitOptions.None);
