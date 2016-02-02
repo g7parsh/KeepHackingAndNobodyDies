@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 public class GenerateNodes : MonoBehaviour {
-
+	public float min_dist = 1f; //minimum spacing for nodes
 	private int totalnodes;
 	private int rednodes;
 	public int changenodes;
@@ -31,7 +31,7 @@ public class GenerateNodes : MonoBehaviour {
 				tempos = new Vector3(Random.Range(minheight, maxwidth), Random.Range(0f, maxheight), 10f);
 			}
 			temp.transform.localPosition = tempos;
-			temp.transform.parent = gameObject.transform;
+			temp.transform.SetParent(gameObject.transform, false);
 
 			nodes.Add(temp);
 		}
@@ -45,7 +45,7 @@ public class GenerateNodes : MonoBehaviour {
 				tempos = new Vector3(Random.Range(0f, maxwidth), Random.Range(0f, maxheight), 10f);
 			}
 			temp.transform.localPosition = tempos;
-			temp.transform.parent = gameObject.transform;
+			temp.transform.SetParent(gameObject.transform, false);
 
 			nodes.Add(temp);
 		}
@@ -80,7 +80,7 @@ public class GenerateNodes : MonoBehaviour {
 		foreach(GameObject g in nodes)
 		{
 			float dist = Vector3.Distance(g.transform.position, pos);
-			if(dist < .2f)
+			if(dist < min_dist)
 			{
 				return false;
 			}
