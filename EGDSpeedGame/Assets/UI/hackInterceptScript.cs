@@ -2,31 +2,16 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public struct binData
-{
-	public binData(string str, bool anom, int index)
-	{
-		this.str = str;
-		this.anom = anom;
-		this.index = index;
-	}
-	string str;
-	bool anom;
-	int index;
-}
 public class hackInterceptScript : MonoBehaviour {
  
 
 	public int textwidth = 31;
 	public Queue<KeyValuePair<string, bool>> checkQueue = new Queue<KeyValuePair<string, bool>>();
-   public  Queue<binData> binQueue = new Queue<binData>();
 	public float speed = .25f;
 	public float anomalychance = 0.1f;
-   // private bool noDoubles = true;
 
 
-
-	private string textstring = "";
+	public string textstring = "";
 
 	private Text txt;
 
@@ -73,9 +58,7 @@ public class hackInterceptScript : MonoBehaviour {
 				}
 				newdata += "</color>";
 			}
-			binQueue.Enqueue(new binData(checkString,anomaly,index));
 			checkQueue.Enqueue(new KeyValuePair<string, bool>(checkString.ToString(), anomaly));
-			//print(checkQueue.Dequeue());
 			
 		}
 		
