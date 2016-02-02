@@ -674,9 +674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f93a1a9ebaf9c43ac6d816bcf7177c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numlines: 10
+  lineheight: 10
+  linewidth: 50
   txt: {fileID: 1941039068}
   inputfield: {fileID: 0}
+  prefix: root:~$
 --- !u!1 &1069609504
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc07991bfc1d47459e57039778b11b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testString: 
+  stream: {fileID: 1941039067}
 --- !u!114 &1287709247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1290,7 +1292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textwidth: 31
   speed: 1
-  anomalychance: 0.5
+  anomalychance: 0.25
 --- !u!114 &1941039068
 MonoBehaviour:
   m_ObjectHideFlags: 0
