@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 public class GenerateNodes : MonoBehaviour {
-	public float min_dist = 1f; //minimum spacing for nodes
+	public float min_dist = 30f; //minimum spacing for nodes
+    //public Image line;
 	private int totalnodes;
 	private int rednodes;
 	public int changenodes;
@@ -61,16 +63,28 @@ public class GenerateNodes : MonoBehaviour {
 		//draw the lines between the nodes
 		for (int i = 0 ; i < nodes.Count -1 ; i++)
 		{
-			LineRenderer line = nodes[i].GetComponent<LineRenderer>();
-			//Vector3 oripos = new Vector3(((nodes[i].transform.localPosition.x -305 )), (nodes[i].transform.localPosition.y - 140),10f);
-			Vector3 oripos = new Vector3((nodes[i].transform.position.x), (nodes[i].transform.position.y),0f);
-			//Debug.Log("obj " + nodes[i].transform.localPosition  + " startnig line" + oripos);
-			line.SetPosition(0, oripos);
+            //LineRenderer line = nodes[i].GetComponent<LineRenderer>();
+            //         line.sortingOrder = 1;
+            //         //line.sortingLayerID = 5;
+            ////Vector3 oripos = new Vector3(((nodes[i].transform.localPosition.x -305 )), (nodes[i].transform.localPosition.y - 140),10f);
+            //Vector3 oripos = new Vector3((nodes[i].transform.position.x), (nodes[i].transform.position.y),0f);
+            ////Debug.Log("obj " + nodes[i].transform.localPosition  + " startnig line" + oripos);
+            //line.SetPosition(0, oripos);
 
-			//Vector3 neworipos = new Vector3(((nodes[i +1].transform.localPosition.x -305 )), (nodes[i +1].transform.localPosition.y - 140),10f);
-			Vector3 neworipos = new Vector3((nodes[i +1].transform.position.x ), (nodes[i +1].transform.position.y),1f);
-			line.SetPosition(1, neworipos);
-			line.SetWidth(.5f,.5f);
+            ////Vector3 neworipos = new Vector3(((nodes[i +1].transform.localPosition.x -305 )), (nodes[i +1].transform.localPosition.y - 140),10f);
+            //Vector3 neworipos = new Vector3((nodes[i +1].transform.position.x ), (nodes[i +1].transform.position.y),1f);
+            ////line.SetPosition(1, neworipos);
+            ////line.SetWidth(.5f,.5f);
+            GameObject line = (GameObject)GameObject.Instantiate( Resources.Load("Prefabs/lineimg"));
+            
+            Vector3 differencevector = nodes[i+1].transform.position - nodes[i].transform.position;
+            line.GetComponent<RectTransform>().sizeDelta = new Vector2((differencevector.magnitude * 2.8f), 20f);
+            line.GetComponent<RectTransform>().pivot = new Vector2(0, 0.5f);
+            line.GetComponent<RectTransform>().position = nodes[i].transform.position;
+            float angle = Mathf.Atan2(differencevector.y, differencevector.x) * Mathf.Rad2Deg;
+            line.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, angle);
+
+            line.transform.parent = gameObject.transform;
 		}
 		nodes[nodes.Count - 1].GetComponent<LineRenderer>().enabled = false;
 	}
