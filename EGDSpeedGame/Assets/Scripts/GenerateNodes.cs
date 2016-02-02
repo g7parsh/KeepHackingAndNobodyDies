@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 public class GenerateNodes : MonoBehaviour {
-	public float min_dist = 30f; //minimum spacing for nodes
+	public float min_dist = 10f; //minimum spacing for nodes
     //public Image line;
 	private int totalnodes;
 	private int rednodes;
@@ -20,7 +20,7 @@ public class GenerateNodes : MonoBehaviour {
 
 		float maxwidth = gameObject.GetComponent<RectTransform>().rect.width /2;
 		float minwidth = -1 * (gameObject.GetComponent<RectTransform>().rect.width /2);
-		Debug.Log(maxwidth + "sad");
+		
 		float maxheight = gameObject.GetComponent<RectTransform>().rect.height /2;
 		float minheight = -1 * (gameObject.GetComponent<RectTransform>().rect.width /2);
 		for(int i  =0; i < rednodes ; i ++ )
@@ -93,7 +93,7 @@ public class GenerateNodes : MonoBehaviour {
 		//determine/ make sure all the nodes are away from each other
 		foreach(GameObject g in nodes)
 		{
-			float dist = Vector3.Distance(g.transform.position, pos);
+			float dist = Vector2.Distance(g.transform.localPosition, pos);
 			if(dist < min_dist)
 			{
 				return false;
