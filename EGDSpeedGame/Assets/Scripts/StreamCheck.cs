@@ -3,6 +3,7 @@
 public class StreamCheck : MonoBehaviour {
    // public string testString;
 	public hackInterceptScript stream;
+	public terminalScript outputTerminal;
 	
 	public void changeColor(string finalstr, string colorhex) {
 		string qstr = "";
@@ -28,13 +29,11 @@ public class StreamCheck : MonoBehaviour {
 		}
 		if (!finalString.Equals("")) {
 			if (input == finalString) {
-
-				print("Yay, you did it :^)");
+				outputTerminal.writeMessage("Yay, you did it :^)");
 				changeColor(finalString, "00ff00");
 			}
 			else {
-
-				print("you dun goofed");
+				outputTerminal.writeMessage("<color=red>you dun goofed</color>");
 				changeColor(finalString, "ff0000");
 			}
 		}	

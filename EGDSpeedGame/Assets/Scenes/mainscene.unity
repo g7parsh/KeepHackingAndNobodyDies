@@ -92,6 +92,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1618154646}
     m_Modifications:
+    - target: {fileID: 11458334, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 22435172, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -130,7 +134,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22435172, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 64.9
+      value: -21
       objectReference: {fileID: 0}
     - target: {fileID: 22435172, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
       propertyPath: m_SizeDelta.x
@@ -163,6 +167,26 @@ Prefab:
     - target: {fileID: 22435172, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458334, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458334, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458334, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1263538062}
+    - target: {fileID: 11458334, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckString
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458334, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
@@ -275,6 +299,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22435172, guid: 041ae19c15686f040a8668e29c9eab76,
     type: 2}
   m_PrefabInternal: {fileID: 54701536}
+--- !u!114 &161886662 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11485450, guid: 041ae19c15686f040a8668e29c9eab76,
+    type: 2}
+  m_PrefabInternal: {fileID: 54701536}
+  m_Script: {fileID: 11500000, guid: a0f93a1a9ebaf9c43ac6d816bcf7177c, type: 3}
 --- !u!1001 &206008079
 Prefab:
   m_ObjectHideFlags: 0
@@ -601,6 +631,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7718f0e37d7cf3047b8c85777852a2d3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &834139193 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11421914, guid: 7f5a473451f706745919cabd26f81150,
+    type: 2}
+  m_PrefabInternal: {fileID: 64004707}
+  m_Script: {fileID: 11500000, guid: 3df6da43c5c355647bb676a55808219e, type: 3}
 --- !u!224 &838651554 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22414402, guid: 7718f0e37d7cf3047b8c85777852a2d3,
@@ -773,6 +809,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 1263538060}
   - 114: {fileID: 1263538061}
+  - 114: {fileID: 1263538062}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -815,6 +852,19 @@ MonoBehaviour:
   minigames:
   - {fileID: 193220, guid: fc765029cfbc35d4c88b0d93b9bea07f, type: 2}
   monitor: {fileID: 1618154646}
+--- !u!114 &1263538062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1263538059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc07991bfc1d47459e57039778b11b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stream: {fileID: 834139193}
+  outputTerminal: {fileID: 161886662}
 --- !u!224 &1479485390 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22426276, guid: 7f5a473451f706745919cabd26f81150,

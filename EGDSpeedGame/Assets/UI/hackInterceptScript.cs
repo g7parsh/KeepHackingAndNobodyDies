@@ -40,7 +40,6 @@ public class hackInterceptScript : MonoBehaviour {
 
 		if(textstring.Length < textwidth * 48) {
 			string checkString = "";
-			int index = textstring.Length;
 			for (int i = 0; i < Random.Range(1, 8); i++) {
 				if (anomaly) {
 					newdata += "<color=#ffff00>";
