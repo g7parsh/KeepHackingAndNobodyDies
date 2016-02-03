@@ -31,11 +31,13 @@ public class StreamCheck : MonoBehaviour {
 		}
 		if (!finalString.Equals("")) {
 			if (input == finalString) {
-				outputTerminal.writeMessage("Yay, you did it :^)");
+				outputTerminal.writeMessage("CODE ANOMALY INTERCEPTED");
+				GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().addScore();
 				changeColor(finalString, "00ff00");
 			}
 			else {
-				outputTerminal.writeMessage("<color=red>you dun goofed</color>");
+				outputTerminal.writeMessage("<color=red>HACK HAS PENETRATED SYSTEM</color>");
+				GameObject.FindGameObjectWithTag("GameManager").GetComponent<HealthControl>().loseHealth();
 				changeColor(finalString, "ff0000");
 			}
 		}	

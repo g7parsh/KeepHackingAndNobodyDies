@@ -21,7 +21,7 @@ public class Firewall : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!failed) {
-			if (Time.time - starttime > failtime) {
+			if (Time.time - starttime > failtime * GameManager.timescale) {
 				failbox.SetActive(true);
 				failed = true;
 				GameObject.FindGameObjectWithTag("GameManager").GetComponent<HealthControl>().loseHealth();
@@ -62,9 +62,9 @@ public class Firewall : MonoBehaviour {
 		//brought it high enough you win destroy gameobject
 		if(rt.localPosition.y >= 140)
 		{
-			Debug.Log("hit top limit");
 			//destroy the game object the minigame has been won
 			Destroy(transform.parent.parent.gameObject);
+			GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().addScore();
 		}
 
 

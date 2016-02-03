@@ -113,7 +113,7 @@ public class GenerateNodes : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!failed) {
-			if (Time.time - starttime > failtime) {
+			if (Time.time - starttime > failtime * GameManager.timescale) {
 				failbox.SetActive(true);
 				failed = true;
 				GameObject.FindGameObjectWithTag("GameManager").GetComponent<HealthControl>().loseHealth();
@@ -122,6 +122,7 @@ public class GenerateNodes : MonoBehaviour {
 			//Debug.Log(gameObject.GetComponent<RectTransform>().rect.width);
 			if (changenodes >= rednodes) {
 				Destroy(transform.parent.parent.gameObject);
+				GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().addScore();
 			}
 		}
 	}
