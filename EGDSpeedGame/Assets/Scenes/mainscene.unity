@@ -290,6 +290,10 @@ Prefab:
       propertyPath: anomalychance
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 11421914, guid: 7f5a473451f706745919cabd26f81150, type: 2}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11423260, guid: 7f5a473451f706745919cabd26f81150, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7f5a473451f706745919cabd26f81150, type: 2}
@@ -928,9 +932,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1263538059}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73f32b76f159cd544a7c3757d319f55b, type: 3}
+  m_Script: {fileID: 11500000, guid: 39029bceb2c6c5d4a835b0e79dd9f44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  incomingHack: {fileID: 8300000, guid: d7c3aff53f2f5db439c9a2dfe9f61812, type: 3}
+  failSound: {fileID: 8300000, guid: 30224dd9268307e4cbd4a908c076a860, type: 3}
+  gameOver: {fileID: 8300000, guid: fe73f877815730846a15e1f87eba3322, type: 3}
   source: {fileID: 1263538064}
   script: {fileID: 834139193}
 --- !u!82 &1263538064
@@ -1018,6 +1025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 276365f2fe3860c4ab1521df10dcbf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Manager: {fileID: 1263538063}
   healthobject: {fileID: 111949373}
 --- !u!224 &1479485390 stripped
 RectTransform:

@@ -11,7 +11,7 @@ public class hackInterceptScript : MonoBehaviour {
 	public float anomalychance = 0.1f;
 
 
-	public string textstring = "";
+	public string textString = "";
 
 	private Text txt;
 
@@ -27,8 +27,8 @@ public class hackInterceptScript : MonoBehaviour {
 	void updateStream () {
 		//if longer than textwidth
 		//cut off first char and tags
-		if(textstring.Length > textwidth * 24) {//24 is size with tag
-			textstring = textstring.Substring(24);
+		if(textString.Length > textwidth * 24) {//24 is size with tag
+			textString = textString.Substring(24);
 		}
 
 		//add new data
@@ -38,7 +38,7 @@ public class hackInterceptScript : MonoBehaviour {
 			anomaly = true;
 		}
 
-		if(textstring.Length < textwidth * 48) {
+		if(textString.Length < textwidth * 48) {
 			string checkString = "";
 			for (int i = 0; i < Random.Range(1, 8); i++) {
 				if (anomaly) {
@@ -61,9 +61,9 @@ public class hackInterceptScript : MonoBehaviour {
 			
 		}
 		
-		textstring += newdata;
+		textString += newdata;
 
-		txt.text = textstring;
+		txt.text = textString;
 		
 	}
 }
