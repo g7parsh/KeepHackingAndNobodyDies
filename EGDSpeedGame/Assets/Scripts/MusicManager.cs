@@ -3,10 +3,9 @@ using System.Collections;
 
 public class MusicManager : MonoBehaviour {
 	public AudioClip incomingHack;
-    public AudioClip failSound;
-    public AudioClip gameOver;
+	public AudioClip failSound;
+	public AudioClip gameOver;
 	public AudioSource source;
-	public hackInterceptScript script;
 
 	void Awake() {
 		source.Play();
@@ -20,6 +19,6 @@ public class MusicManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		source.pitch = Mathf.Clamp(1/script.speed,1,2);
+		source.pitch = 1 / GameManager.timescale;
 	}
 }

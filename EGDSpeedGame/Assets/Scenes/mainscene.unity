@@ -92,6 +92,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1618154646}
     m_Modifications:
+    - target: {fileID: 11437686, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 11458334, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -187,6 +191,26 @@ Prefab:
     - target: {fileID: 11458334, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437686, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 161886662}
+    - target: {fileID: 11437686, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: exitWindow
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437686, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437686, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437686, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 041ae19c15686f040a8668e29c9eab76, type: 2}
@@ -1409,10 +1433,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   incomingHack: {fileID: 8300000, guid: c45ee73d77e513b48a0c77c5d7adecf7, type: 3}
-  failSound: {fileID: 8300000, guid: fc09b8d90a55631429687fe166b4e374, type: 3}
+  failSound: {fileID: 8300000, guid: 02134335508a8524eb664f266414867c, type: 3}
   gameOver: {fileID: 8300000, guid: dd13248cac5ad3845bcab944562e75f8, type: 3}
   source: {fileID: 1263538064}
-  script: {fileID: 834139193}
 --- !u!82 &1263538064
 AudioSource:
   m_ObjectHideFlags: 0
