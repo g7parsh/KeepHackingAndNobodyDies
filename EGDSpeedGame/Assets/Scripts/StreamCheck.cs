@@ -13,7 +13,7 @@ public class StreamCheck : MonoBehaviour {
 			newstr += "<color=#" + colorhex + ">" + finalstr[i] + "</color>";
 		}
 
-		stream.textstring = stream.textstring.Replace(qstr, newstr);
+		stream.textString = stream.textString.Replace(qstr, newstr);
 	}
 
 	public void CheckString(string input) {
