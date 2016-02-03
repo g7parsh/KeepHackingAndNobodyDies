@@ -17,6 +17,8 @@ public class StreamCheck : MonoBehaviour {
 	}
 
 	public void CheckString(string input) {
+		if (!(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))) return;
+
 		string finalString = "";
 
 		while (stream.checkQueue.Count != 0 && !stream.checkQueue.Peek().Value) {//loop until first anomaly
