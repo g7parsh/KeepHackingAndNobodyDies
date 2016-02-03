@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class StreamCheck : MonoBehaviour {
    // public string testString;
@@ -12,8 +13,8 @@ public class StreamCheck : MonoBehaviour {
 			qstr += "<color=#ffff00>" + finalstr[i] + "</color>";
 			newstr += "<color=#" + colorhex + ">" + finalstr[i] + "</color>";
 		}
-
-		stream.textString = stream.textString.Replace(qstr, newstr);
+		var regex = new Regex(qstr);
+		stream.textString = regex.Replace(stream.textString, newstr, 1);
 	}
 
 	public void CheckString(string input) {
@@ -21,13 +22,14 @@ public class StreamCheck : MonoBehaviour {
 
 		string finalString = "";
 
-		while (stream.checkQueue.Count != 0 && !stream.checkQueue.Peek().Value) {//loop until first anomaly
-			stream.checkQueue.Dequeue();
+		while (stream.checkQueue.Count != 0 && !stream.checkQueue.First.Value.anomaly) {//loop until first anomaly
+			stream.checkQueue.RemoveFirst();
 		}
 
 		//loop until no more consecutive anomalies
-		while (stream.checkQueue.Count != 0 && stream.checkQueue.Peek().Value){
-			finalString += stream.checkQueue.Dequeue().Key;//append string to final string
+		while (stream.checkQueue.Count != 0 && stream.checkQueue.First.Value.anomaly){
+			finalString += stream.checkQueue.First.Value.text;//append string to final string
+			stream.checkQueue.RemoveFirst();
 		}
 		if (!finalString.Equals("")) {
 			if (input == finalString) {

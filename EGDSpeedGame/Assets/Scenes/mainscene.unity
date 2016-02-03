@@ -292,8 +292,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11421914, guid: 7f5a473451f706745919cabd26f81150, type: 2}
       propertyPath: speed
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 11421914, guid: 7f5a473451f706745919cabd26f81150, type: 2}
+      propertyPath: outputTerminal
+      value: 
+      objectReference: {fileID: 161886662}
     m_RemovedComponents:
     - {fileID: 11423260, guid: 7f5a473451f706745919cabd26f81150, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7f5a473451f706745919cabd26f81150, type: 2}

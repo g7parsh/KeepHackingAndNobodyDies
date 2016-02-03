@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 
 public class HealthControl : MonoBehaviour {
-    public MusicManager Manager;
+	public MusicManager Manager;
 	public RectTransform healthobject;
 
 	private Image[] healthnodes;
@@ -32,7 +32,7 @@ public class HealthControl : MonoBehaviour {
 			//loop through 
 			for (int i=0; i < loopsize; i++) {
 				healthnodes[i].color = Color.red;
-                Manager.source.PlayOneShot(Manager.failSound);
+				Manager.source.PlayOneShot(Manager.failSound);
 			}
 
 		}
