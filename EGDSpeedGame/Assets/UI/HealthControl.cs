@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthControl : MonoBehaviour {
 	public MusicManager Manager;
@@ -38,6 +39,7 @@ public class HealthControl : MonoBehaviour {
 		}
 		else {
 			//LOSE
+			SceneManager.LoadScene("endgame");
 		}
 
 	}
