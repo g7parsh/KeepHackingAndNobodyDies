@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 public class GenerateNodes : MonoBehaviour {
-	public float min_dist = .2f; //minimum spacing for nodes
+	public float min_dist = .4f; //minimum spacing for nodes
 	//public Image line;
 	private int totalnodes;
 	private int rednodes;
