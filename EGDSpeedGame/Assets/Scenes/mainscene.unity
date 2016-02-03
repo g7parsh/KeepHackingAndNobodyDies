@@ -1374,6 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedchangeinterval: 10
+  Music: {fileID: 1263538063}
   Level: 1
   TotalLevels: 10
   MinigameWaitMinimum: 1
@@ -1407,9 +1408,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39029bceb2c6c5d4a835b0e79dd9f44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  incomingHack: {fileID: 8300000, guid: d7c3aff53f2f5db439c9a2dfe9f61812, type: 3}
-  failSound: {fileID: 8300000, guid: 30224dd9268307e4cbd4a908c076a860, type: 3}
-  gameOver: {fileID: 8300000, guid: fe73f877815730846a15e1f87eba3322, type: 3}
+  incomingHack: {fileID: 8300000, guid: c45ee73d77e513b48a0c77c5d7adecf7, type: 3}
+  failSound: {fileID: 8300000, guid: fc09b8d90a55631429687fe166b4e374, type: 3}
+  gameOver: {fileID: 8300000, guid: dd13248cac5ad3845bcab944562e75f8, type: 3}
   source: {fileID: 1263538064}
   script: {fileID: 834139193}
 --- !u!82 &1263538064
@@ -1423,7 +1424,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 32c55fa2292a08248a61ab2025696601, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.46
   m_Pitch: 1
   Loop: 1
   Mute: 0
