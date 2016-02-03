@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
+
+	public float speedchangeinterval = 10;//the amount of seconds between speedups
+	public static float timescale = 1f;
 
 	private StatusManager status;
 	public int Level = 1;
@@ -14,6 +18,18 @@ public class GameManager : MonoBehaviour {
 	public List<GameObject> minigames; //list of minigame prefabs
 	public RectTransform monitor;
 
+	private int score = 0;
+	public Text scorebox;
+
+	private float lasttime = 0;
+
+	public void addScore() {
+		score++;
+		scorebox.text = score.ToString();
+	}
+
+
+
 	// Use this for initialization
 	void Start () {
 		status = GetComponent<StatusManager>();
@@ -24,9 +40,12 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Level >= TotalLevels)
-		{
-			//TODO end game
+		if (Time.time - lasttime > speedchangeinterval) {
+			lasttime = Time.time;
+			if (timescale > 0) {
+				timescale -= 0.05f;
+				print("new timescale: " + timescale);
+			}
 		}
 	}
 
